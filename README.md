@@ -1,1 +1,11 @@
 # PhaseSpace
+
+Quasi-Monte Carlo methods to evaluate multi dimensional phase space integrals in High Energy physics
+
+We plan to investigate the applicability of Quasi-Monte Carlo methods to evaluate multi dimensional phase space integrals in High Energy physics. The goal is to improve the convergence, the speed of the calculations and the asymptotic error behavior of the calculated observables over current techniques using pseudo random numbers.
+
+Monte Carlo simulations and random number generation are techniques that are widely used in various fields – physics , financial engineering, biology, etc. When one evaluates an integral of a function in an s-dimensional unit cube by Monte Carlo methods, he is in fact calculating the average of the function at a set of randomly sampled points. That means that each point adds linearly to the accumulated sum of the integral and the sum of the squares that will become the variance of the integral. It is common practice in Monte Carlo programs to use a predetermined error criterion as a deterministic termination condition. When using pseudo-random numbers, the estimated error will decrease at the rate of N^(-1/2). We will investigate the use of randomized quasi-random number sequences whose estimated error is expected to be smaller and hence lead to more rapid convergence of the integral.
+
+As an example, the precision measurements of the top quark mass use a matrix element integration method, in which the matrix element is used to calculate the probability of producing the observed events as a function of the top mass. This calculation requires integrating over the variables corresponding to quantities which cannot be observed experimentally, resulting in an integral of up to 26 dimensions. Given the large number of events for which this calculation must be performed, improving the performance of this integration is critical to improving the precision of the final measurement
+
+In our case, we can investigate the effect of replacing pseudo-random numbers by quasi-random numbers on the convergence of scattering cross sections calculated by a precision high-energy physics Monte Carlo program, for definiteness, a variant of KKMC, which calculates Z production and decay in electron-positron collisions, including multi-photon radiation effects.
