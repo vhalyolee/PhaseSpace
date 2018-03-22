@@ -1,0 +1,140 @@
+*****   Demonstration Program for Foam version 2.06    *****
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+F                                                                              F
+F                   ****************************************                   F
+F                   ******     TFOAM::Initialize      ******                   F
+F                   ****************************************                   F
+F                                                      FoamX                   F
+F    Version =            2.06   =               Release date:  2003.10.07     F
+F       nDim =          3 =  Dimension of the simplical sub-space              F
+F       kDim =          0 =  Dimension of the hyper-cubical sub-space          F
+F     nCells =       5000 =  Requested number of Cells (half of them active)   F
+F     nSampl =        500 =  No of MC events in exploration of a cell cell     F
+F       nBin =          8 =  No of bins in histograms, MC exploration of cell  F
+F   EvPerBin =         25 =  Maximum No effective_events/bin, MC exploration   F
+F   OptDrive =          2 =  Type of Driver   =1,2 for Sigma,WtMax             F
+F    OptEdge =          0 =  Decides whether vertices are included in the MC   F
+F    OptPeek =          0 =  Type of the cell Peek =0,1 for maximum, random    F
+F     OptOrd =          0 =  Root cell hyp-cub. or simplex, =0,1               F
+F   OptMCell =          1 =  MegaCell option, slim memory for hyp-cubes        F
+F    OptVert =          1 =  Decides whether to store vertices of simplices    F
+F   OptDebug =          1 =  Additional debug histogram, SetDirectory(1)       F
+F   OptCu1st =          1 =  Numbering of dimensions  starts with h-cubic      F
+F     OptRej =          0 =  MC rejection on/off for OptRej=0,1                F
+F   MaxWtRej =               2   =       Maximum wt in rejection for wt=1 evts F
+F                                                                              F
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+TFOAM::InitVertices: projected number of vertices = 2504
+3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333|1000
+3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333|2000
+3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333|3000
+3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333|4000
+333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+F                                                                              F
+F                   ***  TFOAM::Initialize FINISHED!!!   ***                   F
+F     nCalls =    1819601 =            Total number of function calls          F
+F     XPrime =        2.171203   =     Primary total integral                  F
+F     XDiver =       1.1711264   =     Driver  total integral                  F
+F   MCresult =       1.0000766   =     Estimate of the true MC Integral        F
+F                                                                              F
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+====== Initialization done, entering MC loop
+MCwt=    0.3167673,  MCvect=    0.3928924    0.4658404    0.3687962 
+   loop= 0
+MCwt=    0.3716828,  MCvect=    0.4343838    0.3777783    0.3198135 
+MCwt=    0.6088375,  MCvect=    0.5839512    0.6031994    0.6680097 
+MCwt=     0.569757,  MCvect=    0.2570165    0.2392991    0.3323069 
+MCwt=    0.6812133,  MCvect=    0.3151003     0.354941    0.2357867 
+MCwt=    0.3462383,  MCvect=      0.78642    0.7505758    0.6877611 
+MCwt=    0.2190537,  MCvect=    0.8040371    0.6937424    0.6775894 
+MCwt=     0.929415,  MCvect=    0.6468547    0.7345405      0.66793 
+MCwt=   0.05074077,  MCvect=    0.6309695    0.5373253    0.4660756 
+MCwt=     0.668524,  MCvect=      0.32533     0.226554    0.3568384 
+MCwt=    0.0995683,  MCvect=    0.7408373    0.7718308     0.805761 
+MCwt=    0.7476431,  MCvect=    0.4569387    0.2863289    0.2748795 
+MCwt=    0.2946678,  MCvect=    0.6145366    0.7749046    0.7430318 
+MCwt=    0.3139557,  MCvect=    0.3561614    0.3261544    0.5073941 
+MCwt=    0.5891831,  MCvect=     0.629422    0.6725746    0.8116879 
+   loop= 100000
+====== Events generated, entering Finalize
+TH1.Print Name  = hst_Wt, Entries= 200000, Total sum= 199994
+ fSumw[0]=0, x=-0.025, error=0
+ fSumw[1]=28060, x=0.025, error=167.511
+ fSumw[2]=8686, x=0.075, error=93.1987
+ fSumw[3]=7684, x=0.125, error=87.6584
+ fSumw[4]=7664, x=0.175, error=87.5443
+ fSumw[5]=7974, x=0.225, error=89.2973
+ fSumw[6]=8077, x=0.275, error=89.8721
+ fSumw[7]=8466, x=0.325, error=92.0109
+ fSumw[8]=8841, x=0.375, error=94.0266
+ fSumw[9]=9284, x=0.425, error=96.3535
+ fSumw[10]=9600, x=0.475, error=97.9796
+ fSumw[11]=9661, x=0.525, error=98.2904
+ fSumw[12]=10398, x=0.575, error=101.971
+ fSumw[13]=10714, x=0.625, error=103.508
+ fSumw[14]=10876, x=0.675, error=104.288
+ fSumw[15]=10879, x=0.725, error=104.302
+ fSumw[16]=10739, x=0.775, error=103.629
+ fSumw[17]=10347, x=0.825, error=101.72
+ fSumw[18]=9380, x=0.875, error=96.8504
+ fSumw[19]=7359, x=0.925, error=85.7846
+ fSumw[20]=4564, x=0.975, error=67.5574
+ fSumw[21]=638, x=1.025, error=25.2587
+ fSumw[22]=75, x=1.075, error=8.66025
+ fSumw[23]=20, x=1.125, error=4.47214
+ fSumw[24]=5, x=1.175, error=2.23607
+ fSumw[25]=3, x=1.225, error=1.73205
+ fSumw[26]=6, x=1.275, error=2.44949
+TH1.Print Name  = TFMAXWT_hst_Wt1, Entries= 200000, Total sum= 200000
+TH1.Print Name  = TFMAXWT_hst_Wt2, Entries= 200000, Total sum= 91926.6
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+F                                                                              F
+F                   ****************************************                   F
+F                   ******      TFOAM::Finalize       ******                   F
+F                   ****************************************                   F
+F     NevGen =     200000 = Number of generated events in the MC generation    F
+F     LastVe =          7 = Number of vertices (only for simplical option)     F
+F     nCalls =    2019601 = Total number of function calls                     F
+F                   ----------------------------------------                   F
+F      AveWt =      0.45963287   =     Average MC weight                       F
+F      WtMin =   1.1349979e-22   =     Minimum MC weight (absolute)            F
+F      WtMax =       1.4930823   =     Maximum MC weight (absolute)            F
+F                   ----------------------------------------                   F
+F     XPrime =        2.171203   =     Primary total integral, R_prime         F
+F     XDiver =       1.1711264   =     Driver  total integral, R_loss          F
+F                   ----------------------------------------                   F
+F      IntMC =      0.99795626 +-    0.0014642351  = Result of the MC Integral F
+F   MCerelat =    0.0014672338   =     Relative error of the MC intgral        F
+F  <w>/WtMax =      0.46663235   =              MC efficiency, acceptance rate F
+F  Sigma/<w> =      0.65616689   =              MC efficiency, variance/ave_wt F
+F      WtMax =           0.985   =              WtMax(esp= 0.0005)             F
+F      Sigma =      0.30159587   =              variance of MC weight          F
+F                                                                              F
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+TH1.Print Name  = TFMAXWT_hst_Wt1, Entries= 200000, Total sum= 200000
+TH1.Print Name  = TFMAXWT_hst_Wt2, Entries= 200000, Total sum= 91926.6
+================================================================
+ MCresult= 0.99795626 +- 0.0014642351 RelErr= 0.0014672338
+ Dispersion/<wt>= 0.30159587
+      <wt>/WtMax= 0.46663235,    for epsilon = 0.0005
+ nCalls (initialization only) =   1819601
+================================================================
+TFile**		rdemo.root	histograms
+ TFile*		rdemo.root	histograms
+  OBJ: TH1D	HistWt	Histogram of MC weight : 0 at: 0x9546f68
+  OBJ: TH1D	FoamX_HistEdge_0	Edge Histogram No. 0 : 0 at: 0x95476a0
+  OBJ: TH1D	FoamX_HistEdge_1	Edge Histogram No. 1 : 0 at: 0x9547b08
+  OBJ: TH1D	FoamX_HistEdge_2	Edge Histogram No. 2 : 0 at: 0x9547f70
+  OBJ: TH1D	FoamX_HistEdge_3	Edge Histogram No. 3 : 0 at: 0x95483d8
+  OBJ: TH1D	FoamX_HistEdge_4	Edge Histogram No. 4 : 0 at: 0x9548840
+  OBJ: TH1D	FoamX_HistEdge_5	Edge Histogram No. 5 : 0 at: 0x9548ca8
+  OBJ: TH1D	FoamX_HistDebug_0	Debug Histogram 0 : 0 at: 0x9549160
+  OBJ: TH1D	FoamX_HistDebug_1	Debug Histogram 1 : 0 at: 0x9549598
+  OBJ: TH1D	FoamX_HistDebug_2	Debug Histogram 2 : 0 at: 0x95499a8
+  OBJ: TH1D	FoamX_HistDebug_3	Debug Histogram 3 : 0 at: 0x9549db8
+  OBJ: TH1D	FoamX_HistDebug_4	Debug Histogram 4 : 0 at: 0x954a1c8
+  OBJ: TH1D	FoamX_HistDebug_5	Debug Histogram 5 : 0 at: 0x954a5d8
+  OBJ: TH1D	hst_Wt	Main weight of Foam : 0 at: 0x95ee658
+  KEY: TFOAM	FoamX;1	General purpos self-adapting Monte Carlo event generator
+***** End of Demonstration Program  *****

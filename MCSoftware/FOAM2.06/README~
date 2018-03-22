@@ -1,0 +1,75 @@
+  ///////////////////////////////////////////////////////////////////////////////////////
+  //                                                                                   //
+  //                     FOAM Version 2.06                                             //
+  //             November 2000 (2.01)                                                  //
+  //             June     2001 (2.03)                                                  //
+  //             December 2001 (2.04)                                                  //
+  //             January  2002 (2.05)                                                  //
+  //             January  2005 (2.06)                                                  //
+  //                                                                                   //
+  //  Authors:                                                                         //
+  //            S. Jadach and P. Sawicki                                               //
+  //    Institute of Nuclear Physics, Polish Academy of Sciences                       //
+  //               Krakow, Poland                                                      //
+  //    Stanislaw.Jadach@ifj.edu.pl, Pawel.Sawicki@ifj.edu.pl                          //
+  //                                                                                   //
+  //  Multi-dimensional general purpose Monte Carlo event generator (integrator)       //
+  //  with self-adapting simplical and/or hyper-cubical "foam of cells".               //
+  //                                                                                   //
+  //  The essential part of version 2.x was developed during the 2000 visit in         //
+  //  IFH DESY Zeuthen and the 2001 visit in CERN TH Geneva.                           //
+  //                                                                                   //
+  //  Version 2.06 made in collaboration with P.S. over 2003/04                        //
+  //                                                                                   //
+  //  Short history:                                                                   //
+  //      - First version FOAM 1.0 by S. Jadach, May 1999 in Fortran 77                //
+  //      - Older simplical algorithm described in  physics/9910004                    //
+  //      - Early C++ version by M. Ciesla & M. Slusarczyk, May 2000 (translated 1.x)  //
+  //      - The essential part of version 2.x was developed during the 2000 visit in   //
+  //      - IFH DESY Zeuthen and the 2001 visit in CERN TH Geneva:                     //
+  //      - new algorithm of the cell division (discussion with A. Para acknowledged)  //
+  //      - In June 2001 many improvements using Insure++ and CodeWizard of PARASOFT   //
+  //      - December 2001, correct variance reduction and predefined division points   //
+  //      - January  2002, persistency using ROOT is realized and tested               //
+  //                                                                                   //
+  ///////////////////////////////////////////////////////////////////////////////////////
+
+The main new things with respect CPC version 1.x are the following:
+ - the possibility of dividing integration space into:
+      -HYPER-CUBICS
+      -simplices
+      -hyper-cubics and sinmplices
+ - the very much IMPROVED ALGORITHM for the binary split of the cell
+ - persistency using automatic steramers of ROOT, that is after initialization
+   (or any later time) the entire member of the TFOAM class cen be written on the disk
+   for the latter use.
+
+There is version of TFOAM with and without ROOT, see switch in ROOT_DEF.h
+
+How to run the programs? Just look into demonstration program Demo.cxx
+
+Technical remarks:
+ - all input variables have defaults, so in the beginning 
+   user is only obliged to set dimension of the integration nDim, kDim
+      nDim>0,  kDim=0 for pure simplices
+      nDim=0,  kDim>0 for pure hyp-cubics
+      nDim=>0, kDim>0 such that  nDim+kDim= total dimension in some special cases
+   and to provide integrand the function
+ - the integrand function MUST inherit from FIntegrand abstract class.
+ - memory consumption is the smalest for pure hypercubics (nDim=0, kDim>0)
+   for 100k cells it is 8MB for kDim=6. For simlices it can be substantially bigger.
+ - the many other input/option parameters should be adjusted empirically for
+   a given integrand.
+
+---------------------------------------------------------------------------------
+Dont forget:
+>   export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PWD}
+Commands to run test programs are listed in Makefile:
+>   make Demo-run
+>   make DemoPers
+If no ROOT, after correcting ROOT_DEF.h, do the following:
+>   (make clean; make DemoNR-run)
+
+Fortran external is also linked in Demo, can serve as useful template.
+
+///////////////////////////////////////////////////////////////////////////////////////
